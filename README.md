@@ -65,6 +65,10 @@ React.createElement('div', null, 'Hello world');
 
 add into index.html
 ```js
+//add due to babel throw Invalid regular expression
+//to apply it on the page press ctrl + F5
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+//add inbrowser babel
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 //update all script tag and add attribute type="text/babel" to enable babel transpilation
 <script type="text/babel">...
