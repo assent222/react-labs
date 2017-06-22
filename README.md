@@ -1,27 +1,27 @@
 # react-labs
 start learning react.js
 
-###VS Studio shortcuts
+### VS Studio shortcuts
 ```
 ctrl + ` - show/hide terminal
 ctrl + b - show/hide project tree
 ctrl + p -  find file by name
 F1 - show context commands
 ```
-###What is React?
+### What is React?
 
 * It is JS user interface libruary
 * Developed at Facebook
 * For building single page applicatio
 * High-speed Virtual DOM
 
-###Setting up react tools with chrome
+### Setting up react tools with chrome
 
 open https://chrome.google.com/webstore/category/apps
 
 and add react-detector and React Developer Tools
 
-###Start react as cdn lib
+### Start react as cdn lib
 
 React is a simply JS viev lib, not a framework
 So, you can add it in script in your html
@@ -41,7 +41,7 @@ ReactDOM.render(
 ```
 
 
-###Start JSX with babel in browser
+### Start JSX with babel in browser
 
 * JSX - syntax to write render function which doesn`t compatible with native JS. It calls JavaScript with XML.
 * Babel - Transpiles JSX and ES6 to JS ES5 code
@@ -74,5 +74,40 @@ add into index.html
 <script type="text/babel">...
 ```
 
+### React Component
 
+4.1. What is a react component?
+
+When we're thinking about React applications, we should be thinking about a collection of components. 
+
+Components are small user interface elements that display data as it changes over time. These components can be composed together, nested inside of one another to create entire interfaces. Check Nordstrom.com. Nordstrom uses a lot of React, as we can see in the React Detector.
+
+4.2. Create a react component
+
+```js
+
+//1. Always use a capital letter to name component in your code
+//2. createClass function should always be called with obj which contains render function
+var MyComponent = React.createClass({
+            render() { //3. that create field "render" and set render() function into object
+                //4. return should be in one line with container tag like <div>, in case of different lines react will throw error
+                //return
+                //<div> ... </div> <- ERROR
+                //but you can use ()
+                //return (
+                //  <div> ... </div> <- GOOD
+                //)
+                return <div> 
+                        <h1>Hello, world!</h1>
+                        <p>This is my first react component</p>
+                    </div>
+                
+            }
+        });
+
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('root')
+        );
+```
 
