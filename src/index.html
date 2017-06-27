@@ -1,54 +1,52 @@
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>Hello react</title>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-
-        //EC5
-        var MyComponentES5 = React.createClass({
-            render() {
-                return <div>
-                        <h1>Hello, component ES5!</h1>
-                        <p>This is my first react component</p>
-                    </div>
-                
-            }
-        })
-
-        //EC6
-        class MyComponentES6 extends React.Component {
-            render() {
-                return <div>
-                        <h1>Hello, component ES6!</h1>
-                        <p>This is my first react component</p>
-                    </div>
-                
-            }
-        }
-
-        //Stateless
-        var MyComponentStateless = () => {
+<div id="root"></div>
+<script type="text/babel">
+    //ECMA5
+    const MyComponentES5 = React.createClass({
+        render() {
             return <div>
-                        <h1>Hello, component ES6 Stateless!</h1>
-                        <p>This is my first react component</p>
-                    </div>
-        }
+                <h1>Hello, component ES5!</h1>
+                <p>This is my first react component</p>
+            </div>
 
-        ReactDOM.render(
-            //here should be one container to
+        }
+    });
+
+    //ECMA6
+    class MyComponentES6 extends React.Component {
+        render() {
+            return <div>
+                <h1>Hello, component ES6!</h1>
+                <p>This is my first react component</p>
+            </div>
+        }
+    }
+
+    //Stateless
+    const MyComponentStateless = () => {
+        return <div>
+            <h1>Hello, component ES6 Stateless!</h1>
+            <p>This is my first react component</p>
+        </div>
+    };
+
+    ReactDOM.render(
+        //here should be one container to
             <div>
                 <MyComponentES5 />
                 <MyComponentES6 />
                 <MyComponentStateless />
             </div>,
-            document.getElementById('root')
-        )
-    </script>
+        document.getElementById('root')
+    )
+</script>
 </body>
 </html>

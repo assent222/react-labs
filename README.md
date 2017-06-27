@@ -28,12 +28,12 @@ So, you can add it in script in your html
 
 2.1. open https://facebook.github.io/react/
 2.2. add into index.html
-```js
+```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
 ```
 2.3. add into index.html
-```js
+```
 ReactDOM.render(
     React.createElement('div', null, 'Hello react'),
     document.getElementById('root')
@@ -64,7 +64,7 @@ React.createElement('div', null, 'Hello world');
 
 
 add into index.html
-```js
+```
 //add due to babel throw Invalid regular expression
 //to apply it on the page press ctrl + F5
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -82,10 +82,9 @@ When we're thinking about React applications, we should be thinking about a coll
 
 Components are small user interface elements that display data as it changes over time. These components can be composed together, nested inside of one another to create entire interfaces. Check Nordstrom.com. Nordstrom uses a lot of React, as we can see in the React Detector.
 
-4.2. Create a react component
+4.2. Create a react component ECMA5
 
-```js
-
+```
 //1. Always use a capital letter to name component in your code
 //2. createClass function should always be called with obj which contains render function
 var MyComponent = React.createClass({
@@ -111,3 +110,24 @@ var MyComponent = React.createClass({
         );
 ```
 
+4.3. Create a react component ECMA6
+```
+class MyComponentES6 extends React.Component {
+    render() {
+        return <div>
+            <h1>Hello, component ES6!</h1>
+            <p>This is my first react component</p>
+        </div>
+    }
+}
+```
+
+4.3. Create a react component ECMA6 Stateless
+```
+const MyComponentStateless = () => {
+    return <div>
+        <h1>Hello, component ES6 Stateless!</h1>
+        <p>This is my first react component</p>
+    </div>
+};
+```
