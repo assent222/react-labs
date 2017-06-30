@@ -8,6 +8,16 @@ ctrl + b - show/hide project tree
 ctrl + p -  find file by name
 F1 - show context commands
 ```
+
+### GIT tips
+```
+//untrack file
+git rm --cached filename
+git update-index --no-assume-unchanged filename
+//clear commits etc
+git gc --prune=now
+```
+
 ### What is React?
 
 * It is JS user interface libruary
@@ -84,7 +94,7 @@ Components are small user interface elements that display data as it changes ove
 
 4.2. Create a react component ECMA5
 
-```
+```js
 //1. Always use a capital letter to name component in your code
 //2. createClass function should always be called with obj which contains render function
 var MyComponent = React.createClass({
@@ -111,7 +121,7 @@ var MyComponent = React.createClass({
 ```
 
 4.3. Create a react component ECMA6
-```
+```js
 class MyComponentES6 extends React.Component {
     render() {
         return <div>
@@ -123,7 +133,7 @@ class MyComponentES6 extends React.Component {
 ```
 
 4.3. Create a react component ECMA6 Stateless
-```
+```js
 const MyComponentStateless = () => {
     return <div>
         <h1>Hello, component ES6 Stateless!</h1>
