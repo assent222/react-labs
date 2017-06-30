@@ -191,3 +191,58 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
         document.getElementById('root')
     )
 ```
+
+### Hendling events
+
+6.1. add css and update component
+```js
+<link rel="stylesheet" type="text/css" href="style.css"/>
+//...
+class Note extends React.Component {
+    render() {
+        return <div className="note">
+            <h1>{this.props.header}</h1>
+            <p></p>
+            <span>
+                <button>EDIT</button>
+                <button>X</button>
+            </span>
+        </div>
+    }
+}
+
+ReactDOM.render(
+        <div>
+            <Note header="Note1"/>
+        </div>,
+    document.getElementById('root')
+    )
+```
+
+6.2. create functions
+```js
+class Note extends React.Component {
+    edit(){
+        alert('editing function')
+    }
+    remove(){
+        alert('removing function')
+    }
+    render() {
+        return <div className="note">
+            <h1></h1>
+            <p></p>
+            <span>
+                <button>EDIT</button>
+                <button>X</button>
+            </span>
+        </div>
+    }
+}
+```
+
+6.3. Handle onClick events
+```js
+<button onClick={this.edit}>EDIT</button>
+<button onClick={this.remove}>X</button>
+```

@@ -4,26 +4,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
     <title>Hello react</title>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
 
-    class MyComponentES6 extends React.Component {
+    class Note extends React.Component {
+        edit(){
+            alert('editing function')
+        }
+
+        remove(){
+            alert('removing function')
+        }
+
         render() {
-            return <div>
-                <h1>{this.props.header}</h1>
-                <p>This is my first react component</p>
+            return <div className="note">
+                <p>{this.props.children}</p>
+                <span>
+                    <button onClick={this.edit}>EDIT</button>
+                    <button onClick={this.remove}>X</button>
+                </span>
             </div>
         }
     }
 
     ReactDOM.render(
-        //here should be one container to
-            <div>
-                <MyComponentES6 header="Hello, component ES6!"/>
-            </div>,
+        <div>
+            <Note>Hello world</Note>
+        </div>
+        ,
         document.getElementById('root')
     )
 </script>
