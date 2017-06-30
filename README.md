@@ -141,3 +141,53 @@ const MyComponentStateless = () => {
     </div>
 };
 ```
+
+### Props
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+
+5.1. add header property
+```js
+    class MyComponentES6 extends React.Component {
+        //view property using JSQ expression {...}
+        render() {
+            return <div>
+                <h1>{this.props.header}</h1>
+                <p>This is my first react component</p>
+            </div>
+        }
+    }
+
+    ReactDOM.render(
+            //set properties
+            <div>
+                <MyComponentES6 header="Hello, component ES6!"/>
+            </div>,
+        document.getElementById('root')
+    )
+```
+
+5.2. use props.children using self-closing tag
+```js
+    class MyComponentES6 extends React.Component {
+        //view property using JSQ expression {...}
+        render() {
+            return <div>
+                <h1>{this.props.header}</h1>
+                <p>{this.props.children}</p>
+            </div>
+        }
+    }
+
+    ReactDOM.render(
+            //set properties as attribute and as chield using self-closing tag
+            <div>
+                <MyComponentES6 header="Hello, properties! This is header">
+                    This is my children property
+                </MyComponentES6>
+            </div>,
+        document.getElementById('root')
+    )
+```

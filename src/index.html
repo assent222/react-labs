@@ -9,40 +9,20 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-    //ECMA5
-    const MyComponentES5 = React.createClass({
-        render() {
-            return <div>
-                <h1>Hello, component ES5!</h1>
-                <p>This is my first react component</p>
-            </div>
-        }
-    });
 
-    //ECMA6
     class MyComponentES6 extends React.Component {
         render() {
             return <div>
-                <h1>Hello, component ES6!</h1>
+                <h1>{this.props.header}</h1>
                 <p>This is my first react component</p>
             </div>
         }
     }
 
-    //Stateless
-    const MyComponentStateless = () => {
-        return <div>
-            <h1>Hello, component ES6 Stateless!</h1>
-            <p>This is my first react component</p>
-        </div>
-    };
-
     ReactDOM.render(
         //here should be one container to
             <div>
-                <MyComponentES5 />
-                <MyComponentES6 />
-                <MyComponentStateless />
+                <MyComponentES6 header="Hello, component ES6!"/>
             </div>,
         document.getElementById('root')
     )
